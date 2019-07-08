@@ -15,7 +15,7 @@ This library uses GuzzleHttp to make API request to the Tanda API.
 
 $token = 'yourSecretTokenHere';
 
-$tanda = new \RazorCreations\Tanda($token);
+$tanda = new \RazorCreations\Tanda\APIClient($token);
 
 $users = $tanda->getAllUsers();
 
