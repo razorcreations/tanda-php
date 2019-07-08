@@ -1,0 +1,19 @@
+{
+    "name": "razorcreations/tanda",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Razor Creations",
+            "email": "dev@razorcreations.com"
+        }
+    ],
+	"require": {
+        "guzzlehttp/guzzle": "~6.0"
+    },
+	"autoload": {
+		"psr-4": {
+			"RazorCreations\\Tanda\\": "src"
+		}
+	}
+}
