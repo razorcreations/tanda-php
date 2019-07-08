@@ -4,8 +4,9 @@ namespace RazorCreations\Tanda;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Client;
+use RazorCreations\Tanda\Resources\User;
 
-class Tanda {
+class APIClient {
 
 	private $client;
 	private $token;
@@ -82,6 +83,6 @@ class Tanda {
 	{
 		return array_map(function(array $user) {
 			return User::fromArray($user);
-		},$this->request('GET', 'v2/users'));
+		}, $this->request('GET', 'v2/users'));
 	}
 }

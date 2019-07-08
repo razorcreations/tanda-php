@@ -1,6 +1,6 @@
 <?php
 
-namespace RazorCreations\Tanda;
+namespace RazorCreations\Tanda\Resources;
 
 class User extends Resource {
 
