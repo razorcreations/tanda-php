@@ -48,6 +48,7 @@ class Tanda {
 	{
 		if ($this->token) {
 			$headers['Authorization'] = "bearer $this->token";
+			$headers['Content-Type'] = 'application/json';
 		}
 
 		return $headers;
