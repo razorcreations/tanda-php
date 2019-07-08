@@ -68,7 +68,7 @@ class Tanda {
 		
 		$response = $this->client->request($method, $uri, $config);
 		
-		return json_decode($response->getBody());
+		return json_decode($response->getBody(), true);
 	}
 
 	/**
@@ -80,6 +80,8 @@ class Tanda {
 	 */
 	public function getAllUsers(): array
 	{
-		return $this->request('GET', 'v2/users');
+		return array_map(function(array $user) {
+			return User::fromArray($user);
+		},$this->request('GET', 'v2/users'));
 	}
 }
