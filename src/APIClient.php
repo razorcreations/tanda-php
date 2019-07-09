@@ -85,4 +85,15 @@ class APIClient {
 			return User::fromArray($user);
 		}, $this->request('GET', 'v2/users'));
 	}
+
+	public function getSchedules(string $from, string $to): array
+	{
+		return $this->request('GET', 'v2/schedules', [
+			'query' => [
+				'include_names' => true,
+				'from' => $from,
+				'to' => $to,
+			]
+		]);
+	}
 }
