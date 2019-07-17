@@ -5,6 +5,7 @@ namespace RazorCreations\Tanda;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Client;
 use RazorCreations\Tanda\Resources\User;
+use RazorCreations\Tanda\Resources\LeaveRequest;
 
 class APIClient {
 
@@ -111,5 +112,19 @@ class APIClient {
 			],
 		];
 		return $this->request('POST', 'v2/leave', $config);
+	}
+
+	public function getLeaveRequests(string $from, string $to): array
+	{
+		$results = $this->request('GET', 'v2/leave', [
+			'query' => [
+				'from' => $from,
+				'to' => $to,
+			]
+		]);
+
+		return array_map(function(array $leave_request) {
+			return LeaveRequest::fromArray($leave_request);
+		}, $results);
 	}
 }
