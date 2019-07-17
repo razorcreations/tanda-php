@@ -96,4 +96,20 @@ class APIClient {
 			]
 		]);
 	}
+
+	public function createLeaveRequest ($user_id, $start, $finish, $type, $reason, $hours, $status = 'pending'): array
+	{
+		$config = [
+			'json' => [
+				'user_id' => $user_id,
+				'start' => $start,
+				'finish' => $finish,
+				'leave_type' => $type,
+				'reason' => $reason,
+				'status' => $status,
+				'hours' => $hours,
+			],
+		];
+		return $this->request('POST', 'v2/leave', $config);
+	}
 }
