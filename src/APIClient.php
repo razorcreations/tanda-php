@@ -12,10 +12,10 @@ class APIClient {
 	private $client;
 	private $token;
 
-	public function __construct(string $token = null, ClientInterface $client = null)
+	public function __construct(string $token = null, string $base_uri = 'https://eu.tanda.co/api/', ClientInterface $client = null)
 	{
 		$config = [
-			'base_uri' => 'https://eu.tanda.co/api/',
+			'base_uri' => $base_uri,
 			'timeout' => 10,
 		];
 		$this->client = $client ?? new Client($config);
