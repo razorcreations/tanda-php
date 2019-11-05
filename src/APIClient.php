@@ -133,14 +133,15 @@ class APIClient {
 	 *
 	 * @see https://my.tanda.co/api/v2/documentation#leave-balances-leave-balance-list
 	 *
-	 * @param string $userIds comma separated list of user ids
+	 * @param array $userIds
 	 * @return array
 	 */
-	public function getLeaveBalances(string $userIds): array
+	public function getLeaveBalances(array $userIds): array
 	{
+		$userCommaList = implode(',', $userIds);
 		return $this->request('GET', 'v2/leave_balances', [
 			'query' => [
-				'user_ids' => $userIds,
+				'user_ids' => $userCommaList,
 			]
 		]);
 	}
