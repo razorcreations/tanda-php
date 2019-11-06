@@ -1,5 +1,8 @@
 # Tanda API PHP Library
 
+
+[![Latest Stable Version](https://poser.pugx.org/razorcreations/tanda-php/v/stable)](https://packagist.org/packages/razorcreations/tanda-php) [![Total Downloads](https://poser.pugx.org/razorcreations/tanda-php/downloads)](https://packagist.org/packages/razorcreations/tanda-php) [![License](https://poser.pugx.org/razorcreations/tanda-php/license)](https://packagist.org/packages/razorcreations/tanda-php)
+
 This library uses GuzzleHttp to make API request to the Tanda API.
 
 🚧 Please note this is very much a work in progress... 🚧
