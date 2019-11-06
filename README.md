@@ -23,3 +23,7 @@ $tanda = new \RazorCreations\Tanda\APIClient($token);
 $users = $tanda->getAllUsers();
 
 ```
+
+## Tanda API Documentation
+
+https://my.tanda.co/api/v2/documentation#top
