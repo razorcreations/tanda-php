@@ -127,4 +127,22 @@ class APIClient {
 			return LeaveRequest::fromArray($leave_request);
 		}, $results);
 	}
+
+	/**
+	 * Returns remaining holiday/leave balances for users
+	 *
+	 * @see https://my.tanda.co/api/v2/documentation#leave-balances-leave-balance-list
+	 *
+	 * @param array $userIds
+	 * @return array
+	 */
+	public function getLeaveBalances(array $userIds): array
+	{
+		$userCommaList = implode(',', $userIds);
+		return $this->request('GET', 'v2/leave_balances', [
+			'query' => [
+				'user_ids' => $userCommaList,
+			]
+		]);
+	}
 }
